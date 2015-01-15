@@ -8,4 +8,17 @@ package com.example.exercises.fizz;
  * Created by phillip.heenan on 14/01/15.
  */
 public class FizzBuzz {
+
+
+
+
+    public boolean isMultiple(int multiplier, int input){
+        boolean result = false;
+        try {
+            result = input % multiplier == 0;
+        }catch (ArithmeticException e){
+            // Dividing by 0
+        }
+        return result;
+    }
 }

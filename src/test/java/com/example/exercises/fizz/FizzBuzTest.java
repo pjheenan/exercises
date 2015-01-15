@@ -19,7 +19,19 @@ public class FizzBuzTest extends TestCase {
     }
 
     @Test
-    public void testStart() {
-        fail();
+    public void testMultiple() {
+        FizzBuzz f = new FizzBuzz();
+        assertTrue(f.isMultiple(3, 6));
+    }
+
+    @Test
+    public void tesNotMultiple() {
+        FizzBuzz f = new FizzBuzz();
+        assertFalse(f.isMultiple(3, 5));
+    }
+
+    public void testExceptionThrown(){
+        FizzBuzz f = new FizzBuzz();
+        assertFalse(f.isMultiple(0, 3));
     }
 }
