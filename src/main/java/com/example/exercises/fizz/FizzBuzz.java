@@ -9,10 +9,20 @@ package com.example.exercises.fizz;
  */
 public class FizzBuzz {
 
+    protected String print(int number){
+        StringBuilder builder = new StringBuilder();
+        if(isMultiple(3, number)){
+            builder.append("Fizz");
+        }
+        if (isMultiple(5, number)){
+            builder.append("Buzz");
+        }
+        return (builder.length()!= 0) ? builder.toString() : String.valueOf(number);
+    }
 
 
 
-    public boolean isMultiple(int multiplier, int input){
+    protected boolean isMultiple(int multiplier, int input){
         boolean result = false;
         try {
             result = input % multiplier == 0;

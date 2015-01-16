@@ -34,4 +34,24 @@ public class FizzBuzTest extends TestCase {
         FizzBuzz f = new FizzBuzz();
         assertFalse(f.isMultiple(0, 3));
     }
+
+    public void testPrinterNotMultiple() {
+        FizzBuzz f = new FizzBuzz();
+        assertEquals("1", f.print(1));
+    }
+
+    public void testPrinterMultiple3() throws Exception {
+        FizzBuzz f = new FizzBuzz();
+        assertEquals("Fizz", f.print(3));
+    }
+
+    public void testPrinterMultiple5() throws Exception {
+        FizzBuzz f = new FizzBuzz();
+        assertEquals("Buzz", f.print(5));
+    }
+
+    public void testPrinterMultiple3And5() throws Exception {
+        FizzBuzz f = new FizzBuzz();
+        assertEquals("FizzBuzz", f.print(15));
+    }
 }
