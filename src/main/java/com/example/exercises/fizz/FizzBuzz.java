@@ -11,16 +11,10 @@ public class FizzBuzz {
 
     protected String print(int number){
         StringBuilder builder = new StringBuilder();
-        if(isMultiple(3, number)){
-            builder.append("Fizz");
-        }
-        if (isMultiple(5, number)){
-            builder.append("Buzz");
-        }
+        builder.append(isMultiple(3, number)? "Fizz": "");
+        builder.append(isMultiple(5, number)? "Buzz" : "");
         return (builder.length()!= 0) ? builder.toString() : String.valueOf(number);
     }
-
-
 
     protected boolean isMultiple(int multiplier, int input){
         boolean result = false;
