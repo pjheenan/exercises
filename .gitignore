@@ -21,3 +21,5 @@ hs_err_pid*
 .idea/misc.xml
 .idea/libraries
 .idea/vcs.xml
+.idea/copyright
+.idea/scopes
