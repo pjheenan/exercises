@@ -1,7 +1,5 @@
 package com.example.exercises.fizz;
 
-import java.util.Objects;
-
 /**
  * Write a program that prints the numbers from 1 to 100. But for multiples of three getOutput "Fizz"
  * instead of the number and for the multiples of five getOutput "Buzz". For numbers which are multiples of both
