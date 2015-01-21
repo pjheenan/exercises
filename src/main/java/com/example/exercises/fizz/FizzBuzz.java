@@ -9,6 +9,15 @@ package com.example.exercises.fizz;
  */
 public class FizzBuzz {
 
+    public String[] runProgram(int max) {
+        String[] result = new String[max];
+        for(int i = 0; i < max; i++){
+            result[i] = String.valueOf(getOutput(i+1));
+
+        }
+        return result;
+    }
+
     protected Object getOutput(int number){
         String builder = new StringBuilder(isMultiple(3, number)? "Fizz": "")
                 .append(isMultiple(5, number)? "Buzz" : "").toString();

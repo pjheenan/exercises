@@ -54,4 +54,12 @@ public class FizzBuzTest extends TestCase {
         FizzBuzz f = new FizzBuzz();
         assertEquals("FizzBuzz", f.getOutput(15));
     }
+
+    public void testRunProgram100() throws  Exception {
+        FizzBuzz f = new FizzBuzz();
+        String[] result = f.runProgram(100);
+        assertEquals(100, result.length);
+        assertEquals("1", result[0]);
+        assertEquals("Buzz", result[99]);
+    }
 }
