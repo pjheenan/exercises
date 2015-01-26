@@ -36,12 +36,14 @@ public class NumberSortTest extends TestCase {
         for(int i = 0; i < 100; i++) {
             int input = getRandomInput();
             System.out.println("adding input: " + input);
-
             // TODO add random result to NumberSort
+            sorter.add(input);
         }
 
         // TODO populate result
         Integer[] result = null;
+
+        // validate result array
         int previous = result[0];
         for (int j = 1; j < result.length; j++) {
             System.out.println("previous: " + previous + " compared to " + result[j]);

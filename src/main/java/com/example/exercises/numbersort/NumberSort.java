@@ -26,30 +26,4 @@ public class NumberSort {
         numbers.add(number);
     }
 
-    protected Integer[] sorter(Integer[] input) {
-        boolean sorting = true;
-        while (sorting) {
-            int i = 0;
-            sorting = false;
-            while (i + 1 < input.length) {
-                int a = input[i];
-                int b = input[i + 1];
-                if (b < a) {
-                    sorting = true;
-                    input[i] = b;
-                    input[i + 1] = a;
-                }
-                i++;
-            }
-        }
-        return input;
-    }
-
-    protected Integer[] sortResults() {
-        if (numbers != null && numbers.size() > 0) {
-            return sorter(numbers.toArray(new Integer[numbers.size()]));
-        }
-        return new Integer[]{};
-    }
-
 }
