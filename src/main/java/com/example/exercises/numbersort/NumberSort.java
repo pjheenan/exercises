@@ -1,5 +1,8 @@
 package com.example.exercises.numbersort;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * In the Pragmatic Lottery (motto: There’s One Born Every Minute, and it Might Just Be You!), we select each week’s
  * winning combination by drawing balls. There are sixty balls, numbered (not surprisingly, as we are programmers) 0 to
@@ -13,5 +16,40 @@ package com.example.exercises.numbersort;
  */
 public class NumberSort {
 
+    List<Integer> numbers;
+
+    public NumberSort() {
+        numbers = new ArrayList<Integer>();
+    }
+
+    public void add(int number) {
+        numbers.add(number);
+    }
+
+    protected Integer[] sorter(Integer[] input) {
+        boolean sorting = true;
+        while (sorting) {
+            int i = 0;
+            sorting = false;
+            while (i + 1 < input.length) {
+                int a = input[i];
+                int b = input[i + 1];
+                if (b < a) {
+                    sorting = true;
+                    input[i] = b;
+                    input[i + 1] = a;
+                }
+                i++;
+            }
+        }
+        return input;
+    }
+
+    protected Integer[] sortResults() {
+        if (numbers != null && numbers.size() > 0) {
+            return sorter(numbers.toArray(new Integer[numbers.size()]));
+        }
+        return new Integer[]{};
+    }
 
 }
