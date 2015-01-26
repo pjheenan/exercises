@@ -27,10 +27,6 @@ public class FizzBuzz {
             builder.append(isMultiple(multiplier, number)? values.get(multiplier): "");
         }
         return (builder.length()!= 0) ? builder.toString() : number;
-
-
-//        String builder = new StringBuilder(isMultiple(3, number)? "Fizz": "")
-//                .append(isMultiple(5, number)? "Buzz" : "").toString();
     }
 
     protected boolean isMultiple(int multiplier, int input){
