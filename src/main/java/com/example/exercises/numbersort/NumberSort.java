@@ -26,4 +26,16 @@ public class NumberSort {
         numbers.add(number);
     }
 
+    public int compare (int number1, int number2){
+        int result = 0;
+        if(number1 > number2){
+            result = -1;
+        }else if(number2 > number1){
+            result = 1;
+        }
+        return result;
+    }
+
+
+
 }
