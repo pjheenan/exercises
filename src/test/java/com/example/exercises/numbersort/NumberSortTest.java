@@ -34,15 +34,42 @@ public class NumberSortTest extends TestCase {
         super.tearDown();
     }
 
-    public void testAdd() throws Exception{
+    public void testAddLower() throws Exception{
         sorter.add(3);
         assertNotNull(sorter.numbers);
         assertEquals(1, sorter.numbers.size());
-        assertEquals(1, (int)sorter.numbers.get(0));
+        assertEquals(3, (int)sorter.numbers.get(0));
 
         sorter.add(1);
         assertEquals(2, sorter.numbers.size());
         assertEquals(3, (int)sorter.numbers.get(1));
+    }
+
+    public void testAddGreater() throws Exception{
+        sorter.add(1);
+        assertNotNull(sorter.numbers);
+        assertEquals(1, sorter.numbers.size());
+        assertEquals(1, (int)sorter.numbers.get(0));
+
+        sorter.add(3);
+        assertEquals(2, sorter.numbers.size());
+        assertEquals(1, (int)sorter.numbers.get(0));
+        assertEquals(3, (int)sorter.numbers.get(1));
+    }
+
+    public void testSequence() {
+        sorter.add(15);
+        sorter.add(5);
+        sorter.add(20);
+        sorter.add(7);
+        sorter.add(30);
+
+        assertEquals(5, (int)sorter.numbers.get(0));
+        assertEquals(7, (int)sorter.numbers.get(1));
+        assertEquals(15, (int)sorter.numbers.get(2));
+        assertEquals(20, (int)sorter.numbers.get(3));
+        assertEquals(30, (int)sorter.numbers.get(4));
+
     }
 
     public void testIntCompare() throws Exception{

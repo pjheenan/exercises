@@ -22,11 +22,24 @@ public class NumberSort {
         numbers = new ArrayList<Integer>();
     }
 
-    public void add(int number) {
-        numbers.add(number);
+
+
+    void add(int number) {
+        if(numbers.size() == 0) {
+            numbers.add(number);
+        } else {
+            int i = 0;
+            for(int num: numbers){
+                if(num > number){
+                    break;
+                }
+                i++;
+            }
+            numbers.add(i, number);
+        }
     }
 
-    public int compare (int number1, int number2){
+    int compare (int number1, int number2){
         int result = 0;
         if(number1 > number2){
             result = -1;
