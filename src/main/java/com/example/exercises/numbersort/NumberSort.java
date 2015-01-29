@@ -12,6 +12,12 @@ import java.util.List;
  * challenge is to come up with some code that accepts each number as it is drawn and presents the sorted list of numbers
  * so far.
  *
+ * GIVEN a lottery game
+ * WHEN Daisy Mae extracts a ball
+ * THEN add the ball to the drawn numbers
+ * AND order the drawn numbers in ascending order
+ * AND return the ordered list of drawn numbers
+ *
  * Created by phillip.heenan on 26/01/15.
  */
 public class NumberSort {
@@ -22,33 +28,37 @@ public class NumberSort {
         numbers = new ArrayList<Integer>();
     }
 
+    public List<Integer> lottery() {
+        return numbers;
+    }
 
-
-    void add(int number) {
+    public void add(int number) {
         if(numbers.size() == 0) {
             numbers.add(number);
         } else {
-            int i = 0;
-            for(int num: numbers){
-                if(num > number){
-                    break;
-                }
-                i++;
-            }
-            numbers.add(i, number);
+            addToExistingList(number);
         }
     }
 
-    int compare (int number1, int number2){
+    private void addToExistingList(int number) {
+        int i = 0;
+        for(int num: numbers) {
+            if(num > number) {
+                break;
+            }
+            i++;
+        }
+        numbers.add(i, number);
+    }
+
+    int compare (int number1, int number2) {
         int result = 0;
-        if(number1 > number2){
+        if(number1 > number2) {
             result = -1;
-        }else if(number2 > number1){
+        }else if(number2 > number1) {
             result = 1;
         }
         return result;
     }
-
-
 
 }

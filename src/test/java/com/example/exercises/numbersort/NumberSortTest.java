@@ -34,6 +34,38 @@ public class NumberSortTest extends TestCase {
         super.tearDown();
     }
 
+    public void testAcceptance() throws Exception{
+        sorter.add(1);
+        List<Integer> result = sorter.lottery();
+        assertNotNull(result);
+        assertEquals(1, result.size());
+        assertEquals(1, (int)result.get(0));
+
+        sorter.add(15);
+        result = sorter.lottery();
+        assertNotNull(result);
+        assertEquals(2, result.size());
+        assertEquals(1, (int)result.get(0));
+        assertEquals(15, (int)result.get(1));
+
+        sorter.add(5);
+        result = sorter.lottery();
+        assertNotNull(result);
+        assertEquals(3, result.size());
+        assertEquals(1, (int)result.get(0));
+        assertEquals(5, (int)result.get(1));
+        assertEquals(15, (int)result.get(2));
+
+        sorter.add(23);
+        result = sorter.lottery();
+        assertNotNull(result);
+        assertEquals(4, result.size());
+        assertEquals(1, (int)result.get(0));
+        assertEquals(5, (int)result.get(1));
+        assertEquals(15, (int)result.get(2));
+        assertEquals(23, (int)result.get(3));
+    }
+
     public void testAddLower() throws Exception{
         sorter.add(3);
         assertNotNull(sorter.numbers);
