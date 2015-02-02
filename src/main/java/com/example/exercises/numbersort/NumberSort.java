@@ -28,11 +28,12 @@ public class NumberSort {
         numbers = new ArrayList<Integer>();
     }
 
-    public List<Integer> lottery() {
+    public List<Integer> numberDraw(int number) {
+        add(number);
         return numbers;
     }
 
-    public void add(int number) {
+    void add(int number) {
         if(numbers.size() == 0) {
             numbers.add(number);
         } else {
@@ -49,16 +50,6 @@ public class NumberSort {
             i++;
         }
         numbers.add(i, number);
-    }
-
-    int compare (int number1, int number2) {
-        int result = 0;
-        if(number1 > number2) {
-            result = -1;
-        }else if(number2 > number1) {
-            result = 1;
-        }
-        return result;
     }
 
 }
