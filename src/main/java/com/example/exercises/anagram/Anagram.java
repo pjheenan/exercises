@@ -10,14 +10,31 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * Search the dictionary list for anagrams of a selected word.
+ * The result should not include the word itself.
+ *
  * Created by phillip.heenan on 02/02/15.
  */
 public class Anagram {
 
     public List<String> find(String word) {
         List<String> dictionary = getDictionary();
-
         List<String> result = new ArrayList<String>();
+        int count =0;
+        for (String wordFromDictionary : dictionary) {
+            if (wordFromDictionary.length() == word.length()) {
+                for (int i=0 ; i < word.length(); i++){
+                    wordFromDictionary.
+                    if (wordFromDictionary.contains(String.valueOf(word.charAt(i)))) {
+                        count++;
+                    }
+                }
+                if (count == word.length()) {
+                    result.add(wordFromDictionary);
+                    System.out.println(wordFromDictionary);
+                }
+            }
+        }
 
         return result;
     }
